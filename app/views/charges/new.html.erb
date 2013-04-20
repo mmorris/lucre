@@ -27,7 +27,7 @@
         StripeCheckout.open({
           key:         '<%= Rails.configuration.stripe[:publishable_key] %>',
           amount:      Math.round(100 * $('input[name="amount"]').val()),
-          name:        'Pay @<%= ENV['PAYEE_TWITTER'] %>',
+          name:        'Pay <%= ENV['PAYEE_NAME'] %>',
           panelLabel:  'Pay',
           token:       token
         });
